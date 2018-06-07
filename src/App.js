@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Logo from './components/Logo';
 import ThemeProvider from './fela/components/ThemeProvider';
 import { bridebookTheme } from './themes/bridebook-theme';
 import ButtonPageContainer from './components/ButtonPageContainer';
 import Box from './fela/components/Box';
 import Text from './fela/components/Text';
-import { logo, header, app, title, intro } from './App.style';
+import { header, app, title, intro } from './App.style';
 
 const App = () => {
   const theme = bridebookTheme;

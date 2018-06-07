@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { submitButton } from '../actions/notification-actions';
 import Button from './Button';
 import { buttonPageWrapper } from './ButtonPageContainer.style';
@@ -10,14 +9,10 @@ import Text from '../fela/components/Text';
 
 type PropTypes = {
   notification: number,
-  actions: Object,
+  submitButton: Function,
 };
 
-const ButtonPageContainer = ({
-  submitButton,
-  notification,
-  changeEmailField,
-}) => {
+const ButtonPageContainer = ({ submitButton, notification }: PropTypes) => {
   const submitTest = e => {
     e.preventDefault();
     submitButton(e);

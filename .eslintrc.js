@@ -2,6 +2,10 @@ module.exports = {
   extends: ['airbnb', 'plugin:flowtype/recommended'],
   plugins: ['flowtype'],
   parser: 'babel-eslint',
+  globals: {
+    window: true,
+    document: true,
+  },
   rules: {
     'arrow-parens': 0, // Does not work with Flow generic types.
     'comma-dangle': 0, // Because some files are still in ES5.

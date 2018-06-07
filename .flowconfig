@@ -1,0 +1,6 @@
+[libs]
+node_modules/*
+
+[options]
+module.system.node.resolve_dirname=<PROJECT_ROOT>
+module.system.node.resolve_dirname=node_modules
