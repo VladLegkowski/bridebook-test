@@ -24,12 +24,12 @@ const App = () => {
         <Box style={{ maxWidth: '1000px', alignSelf: 'center' }}>
           <Box style={intro}>
             <Text as="p">
-              Your task is to create a Button element following a spec found in
-              "/designs/Stylebook-buttons.pdf"
+              Your task is to create a Button element following a spec found in{' '}
+              <em>/designs/Stylebook-buttons.pdf</em>
             </Text>
             <Text as="p">
               You can use any type of css library you want, but bonus points for
-              using css-in-js. BUT don't get stuck in setting up one of the
+              using css-in-js. BUT don&apos;t get stuck in setting up one of the
               css-in-js libraries if it takes you too long.
             </Text>
           </Box>
