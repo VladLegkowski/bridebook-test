@@ -1,6 +1,6 @@
 import { colors } from '../themes/variables';
 
-export const notificationWrapper = {
+export const buttonPageWrapper = {
   paddingLeft: '15px',
   paddingRight: '15px',
   paddingBottom: '15px',
