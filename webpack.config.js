@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: ['react-hot-loader/patch', './src/index.js'],
@@ -8,6 +9,28 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
+      },
+      {
+        test: /\.*css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: { sourceMap: false }
+            },
+            {
+              loader: 'postcss-loader',
+              options: { sourceMap: false }
+            },
+            {
+              loader: 'sass-loader',
+              options: { sourceMap: false }
+            },
+          ]
+          // use: 'css-loader?sourceMap=false!postcss-loader!sass-loader'
+
+        })
       },
     ],
   },

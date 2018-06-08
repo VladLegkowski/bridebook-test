@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.6",
+    "@storybook/addon-links": "^3.4.6",
+    "@storybook/react": "^3.4.6",
     "babel-core": "^6.26.0",
     "babel-eslint": "8.0.1",
     "babel-plugin-syntax-trailing-function-commas": "6.8.0",
@@ -42,6 +45,7 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
+    "classnames": "^2.2.5",
     "color": "^3.0.0",
     "eslint": "4.10.0",
     "eslint-config-prettier": "^2.9.0",
@@ -73,7 +77,9 @@
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "build": "node ./scripts/build.js",
     "flow": "flow",
-    "eslint": "eslint src"
+    "eslint": "eslint src",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"

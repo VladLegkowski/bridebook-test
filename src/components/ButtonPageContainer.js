@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { submitButton } from '../actions/notification-actions';
-import Button from './Button';
+import Button from './button/Button';
 import { buttonPageWrapper } from './ButtonPageContainer.style';
 import Box from '../fela/components/Box';
 import Text from '../fela/components/Text';
@@ -13,10 +13,6 @@ type PropTypes = {
 };
 
 const ButtonPageContainer = ({ submitButton, notification }: PropTypes) => {
-  const submitTest = e => {
-    e.preventDefault();
-    submitButton(e);
-  };
 
   return (
     <Box>
@@ -24,7 +20,7 @@ const ButtonPageContainer = ({ submitButton, notification }: PropTypes) => {
         <Text>This number should increase on button press: {notification}</Text>
       </Box>
       <Box style={buttonPageWrapper}>
-        <Button text="hello world" onClick={submitTest} />
+        <Button onClick={() => submitButton()}>hello world</Button>
       </Box>
     </Box>
   );
