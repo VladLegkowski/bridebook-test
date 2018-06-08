@@ -8,12 +8,12 @@ import './Button.scss';
 type Props = {
   children: React.Node,
   className?: string,
-  device: string,
-  type: string,
-  shadow: boolean,
-  size: string,
-  width: string,
-  restProps: any,
+  device?: string,
+  type: ?string,
+  shadow?: boolean,
+  size?: string,
+  width?: string,
+  restProps?: any,
 };
 
 /**
