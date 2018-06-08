@@ -20,7 +20,7 @@ const ButtonPageContainer = ({ submitButton, notification }: PropTypes) => {
         <Text>This number should increase on button press: {notification}</Text>
       </Box>
       <Box style={buttonPageWrapper}>
-        <Button onClick={() => submitButton()}>hello world</Button>
+        <Button type="primary" onClick={() => submitButton()}>hello world</Button>
       </Box>
     </Box>
   );

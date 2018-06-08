@@ -1,7 +1,9 @@
-// Default colour palette
+// Default colour palette*/
 $bb-color-primary: #44b8a6;
 $bb-color-secondary: #9798d8;
 $bb-color-default: #dde0e3;
+$bb-font-color: #fff;
+$bb-default-font-color: #1a2c40;
 
 // Sizes
 $font-normal: 14px;
@@ -13,14 +15,97 @@ $height-normal: 44px;
 $height-big: 60px;
 
 // Padding
-$padding-tiny: 10px;
-$padding-normal: 20px;
-$padding-big: 30px;
+$padding-tiny: 0 10px;
+$padding-normal: 0 20px;
+$padding-big: 0 30px;
 
-.bb-button {
-  background-color: yellow;
+// Globals
+$bb-global-radius: 5px;
+
+@mixin color($bgColor, $fontColor) {
+  background: $bgColor;
+  border: 1px solid $bgColor;
+  color: $fontColor;
+
+  &:not([disabled]) {
+    &:hover,
+    &:focus {
+      background: lighten($bgColor, 8);
+      border-color: lighten($bgColor, 8);
+    }
+
+    &:active {
+      background: lighten($bgColor, 16);
+      border-color: lighten($bgColor, 16);
+    }
+  }
 }
 
+@mixin size($font-size, $height, $padding) {
+  font-size: $font-size;
+  height: $height;
+  padding: $padding;
+}
+
+.bb-button {
+  align-items: center;
+  border-radius: $bb-global-radius;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  outline: 0;
+  margin: 0;
+  text-decoration: none;
 
 
+  &[disabled] {
+    background-color: $bb-color-default;
+    border-color: $bb-color-default;
+    color: $bb-default-font-color;
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  /* ========================================================================
+                             Buttons variants
+    ======================================================================== */
+  &--primary {
+    @include color($bb-color-primary, $bb-font-color);
+  }
+
+  &--secondary {
+    @include color($bb-color-secondary, $bb-font-color);
+  }
+
+  &--default {
+    @include color($bb-color-default, $bb-default-font-color);
+  }
+
+  /* ========================================================================
+                                   Size variants
+    ======================================================================== */
+  &--tiny {
+    @include size($font-normal, $height-tiny, $padding-tiny);
+  }
+
+  &--normal {
+    @include size($font-normal, $height-normal, $padding-normal);
+  }
+
+  &--big {
+    @include size($font-big, $height-big, $padding-big);
+  }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+
+  /* ========================================================================
+                                 With shadow
+  ======================================================================== */
+  &--decorated {
+    box-shadow: 0 2px rgba(0, 0, 0, .1);
+  }
+}
 

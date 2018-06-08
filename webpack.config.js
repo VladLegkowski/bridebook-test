@@ -1,5 +1,6 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path");
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: ['react-hot-loader/patch', './src/index.js'],
@@ -11,27 +12,10 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.*css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: { sourceMap: false }
-            },
-            {
-              loader: 'postcss-loader',
-              options: { sourceMap: false }
-            },
-            {
-              loader: 'sass-loader',
-              options: { sourceMap: false }
-            },
-          ]
-          // use: 'css-loader?sourceMap=false!postcss-loader!sass-loader'
-
-        })
-      },
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"],
+        include: path.resolve(__dirname, "../")
+      }
     ],
   },
   resolve: {
